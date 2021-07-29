@@ -4,7 +4,7 @@
 Servo myservo;
 LiquidCrystal lcd(7, 6, 5, 4, 3, 2); // Creates an LCD object. Parameters: (rs, enable, d4, d5, d6, d7)
  
-int pos = 0; // la position initiale du servo moteur
+int pos = 0; 
 const int trigPin = 9;
 const int echoPin = 10;
 const int moteur = 11;
@@ -14,8 +14,8 @@ const int ledPin2 = 15;
 float distanceCm, DistanceSec,duration;
  
 void setup() {
-  myservo.attach(moteur); // attache le Servo moteur a la pin numéro 11
-  lcd.begin(16,2); // Initialiser l'interface de Lcd avec leurs Dimensions
+  myservo.attach(moteur); 
+  lcd.begin(16,2); 
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   pinMode(buzzer, OUTPUT);
@@ -28,10 +28,10 @@ void setup() {
 void loop() {
   for (pos = 0; pos <= 180; pos += 1) { // aller de 0 a 180 degée
   // in steps of 1 degree
-    myservo.write(pos); // Programmer le Servo pour aller a la position (pos)
+    myservo.write(pos); 
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
-    digitalWrite(trigPin, HIGH); //envoyer une impulsion de 10 micro seconds
+    digitalWrite(trigPin, HIGH); 
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW);
      
@@ -48,10 +48,10 @@ void loop() {
         digitalWrite(ledPin2, HIGH);
         delay(700);
         noTone(buzzer); // Stop sound...
-        lcd.setCursor(0,0); // positionner le cursor a 0,0
-        lcd.print("Distance: "); // Printe "Distance" sur LCD
-        lcd.print(distanceCm); // Printe la valeur Obtenue sur LCD
-        lcd.print(" cm "); // Printe l'unité sur LCD
+        lcd.setCursor(0,0); 
+        lcd.print("Distance: "); 
+        lcd.print(distanceCm);
+        lcd.print(" cm "); 
         delay(10);
         lcd.setCursor(0,1);
         lcd.print("Angle : ");
@@ -66,10 +66,10 @@ void loop() {
         digitalWrite(ledPin1, HIGH);
         delay(100);
         digitalWrite(buzzer, LOW);
-        lcd.setCursor(0,0); // positionner le cursor a 0,0
-        lcd.print("Distance: "); // Printe "Distance" sur LCD
-        lcd.print(distanceCm); // Printe la valeur Obtenue sur LCD
-        lcd.print(" cm "); // Printe l'unité sur LCD
+        lcd.setCursor(0,0); 
+        lcd.print("Distance: "); 
+        lcd.print(distanceCm); 
+        lcd.print(" cm "); 
         delay(10);
         lcd.setCursor(0,1);
         lcd.print("Angle : ");
@@ -84,16 +84,16 @@ void loop() {
       digitalWrite(ledPin2, LOW);
     }
      
-    lcd.setCursor(0,0); // positionner le cursor a 0,0
-    lcd.print("Distance: "); // Printe "Distance" sur LCD
-    lcd.print(distanceCm); // Printe la valeur Obtenue sur LCD
-    lcd.print(" cm "); // Printe l'unité sur LCD
+    lcd.setCursor(0,0);
+    lcd.print("Distance: "); 
+    lcd.print(distanceCm); 
+    lcd.print(" cm "); 
     delay(10);
     lcd.setCursor(0,1);
     lcd.print("Angle : ");
     lcd.print(pos);
     lcd.print(" deg ");
-    delay(80); //attendre 100ms pour que le servo cherche sa position
+    delay(80); 
      
   }
   for (pos = 180; pos >= 0; pos -= 1) { //
@@ -114,10 +114,10 @@ void loop() {
         digitalWrite(ledPin2, HIGH);
         delay(700);
         noTone(buzzer); // Stop sound...
-        lcd.setCursor(0,0); // positionner le cursor a 0,0
-        lcd.print("Distance: "); // Printe "Distance" sur LCD
-        lcd.print(distanceCm); // Printe la valeur Obtenue sur LCD
-        lcd.print(" cm "); // Printe l'unité sur LCD
+        lcd.setCursor(0,0); 
+        lcd.print("Distance: "); 
+        lcd.print(distanceCm); 
+        lcd.print(" cm "); 
         delay(10);
         lcd.setCursor(0,1);
         lcd.print("Angle : ");
@@ -132,10 +132,10 @@ void loop() {
         digitalWrite(ledPin1, HIGH);
         delay(100);
         digitalWrite(buzzer, LOW);
-        lcd.setCursor(0,0); // positionner le cursor a 0,0
-        lcd.print("Distance: "); // Printe "Distance" sur LCD
-        lcd.print(distanceCm); // Printe la valeur Obtenue sur LCD
-        lcd.print(" cm "); // Printe l'unité sur LCD
+        lcd.setCursor(0,0); 
+        lcd.print("Distance: "); 
+        lcd.print(distanceCm); 
+        lcd.print(" cm "); 
         delay(10);
         lcd.setCursor(0,1);
         lcd.print("Angle : ");
