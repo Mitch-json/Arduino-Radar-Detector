@@ -26,7 +26,7 @@ void setup() {
 }
  
 void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // aller de 0 a 180 degée
+  for (pos = 0; pos <= 180; pos += 1) { 
   // in steps of 1 degree
     myservo.write(pos); 
     digitalWrite(trigPin, LOW);
